@@ -1,0 +1,16 @@
+{
+  "name": "meta-issue",
+  "version": "1.0.0",
+  "description": "Creates meta/umbrella issues for github repositories.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "octokit": "^2.0.7"
+  }
+}
