@@ -1,0 +1,11 @@
+query getOrgProjects {
+  organization(login: "dart-lang") {
+    projectsV2(first: 50) {
+      nodes {
+        id
+        title
+      }
+    }
+  }
+}
+

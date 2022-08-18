@@ -5,17 +5,15 @@ dotenv.config()
 
 const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN})
 
-const {
-  data: { login },
-} = await octokit.rest.users.getAuthenticated();
-console.log("Hello, %s", login);
-
-const generateProject = (feature) => {
+/*
+ * Github's REST api and GH cli do not offer the ability to manage Github
+ * ProjectsV2.
+ * The only hook to create projectsV2 I can find is with the graphQL api.  We
+ * only need to use the graphQL api to generate the projectV2 and maybe add the
+ * issues to the project as well.
+ */
+const generateProject = async (feature) => {
   // create github project
-  octokit.rest.projects.createForOrg({
-    org: config.organization,
-    name: feature
-  })
   // make project private
   // name project
   // Return status and projectId
@@ -23,4 +21,7 @@ const generateProject = (feature) => {
 const generateIssues = (projectID, issueList) => {
   // return list of generated issues
 }
+
+// Get all issues associated with a project
+const getIssues = () => {}
 

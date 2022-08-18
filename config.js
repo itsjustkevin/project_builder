@@ -1,5 +1,5 @@
 export const config = {
-  organization: 'dart-lang',
+  organization: 'cleancodeclub',
   issues: [
     {
       title: 'Write language spec',
