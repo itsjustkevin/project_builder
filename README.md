@@ -16,6 +16,22 @@ proper scopes necessary to interact with the api.
 
 ### Scopes needed for token
 - [x] repo
+- [ ] write:packages
+  - [x] read:packages
 - [ ] admin:org
   - [x] write:org
   - [x] read:org
+- [ ] admin:org
+  - [x] write:org
+  - [x] read:org
+- [ ] admin:public_key
+  - [x] read:public_key
+- [x] user
+- [ ] write:discussion
+  - [x] read:discussion
+- [ ] admin:enterprise
+  - [x] read:enterprise
+- [x] project
+- [ ] admin:gpg_key
+  - [x] read:gpg_key
+

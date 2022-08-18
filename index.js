@@ -38,10 +38,10 @@ axios({
   method: 'post',
   headers: headers,
   data: {
-    query: query.getRepoIssues
+    query: query.getOrgProjects
   }
 }).then((result) => {
-  console.log(result.data.data);
+  console.log(result.data);
 })
 
 
