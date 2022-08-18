@@ -1,9 +1,11 @@
 import { Octokit, App } from "octokit";
+import axios from 'axios'
+import * as dotenv from 'dotenv';
+import * as query from './queries.js'
 import {config} from "./config.js";
-import * as dotenv from 'dotenv'
-dotenv.config()
+dotenv.config();
 
-const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN})
+// const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN})
 
 /*
  * Github's REST api and GH cli do not offer the ability to manage Github
@@ -24,4 +26,22 @@ const generateIssues = (projectID, issueList) => {
 
 // Get all issues associated with a project
 const getIssues = () => {}
+
+const endpoint = 'https://api.github.com/graphql'
+const headers = {
+  'content-type': 'application/json',
+  'Authorization': `token ${process.env.GITHUB_TOKEN}`
+}
+
+axios({
+  url: endpoint,
+  method: 'post',
+  headers: headers,
+  data: {
+    query: query.getRepoIssues
+  }
+}).then((result) => {
+  console.log(result.data.data);
+})
+
 
